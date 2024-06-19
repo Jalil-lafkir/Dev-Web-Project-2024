@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/9cd2a4ba0d.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Registration.css">
+    <title>Registration</title>
+</head>
+<body>
+    <section class="RegistrationSection">
+        <div class="RegitrationCard">
+
+            <div class="RegistrationLogInCardStyle">
+
+                <div class="RegistrationTitle" > Welocome Back Hero! </div>
+              
+                <div class="lineStyle" id="UseGsuiteForLogIn"></div>
+              
+                <form action="Registration.php" method="post">
+                    <div class="InputsStyle">
+                        <input type="text" placeholder=" Example@g.ens-kouba.dz " name="LGsuite">
+                    </div>
+                    <div class="InputsStyle">
+                        <input type="Password" placeholder=" Password " name="Lpassword">
+                    </div>
+                    <div class="ChekBoxStyle">
+                        <input type="Checkbox">
+                        <p> Show Password </p>
+                    </div>
+                    <div class="SendButton">
+                        <input type="submit" value="LogIn" name="LButton">
+                    </div>
+                </form>
+              
+                <div class="lineStyle"></div>
+              
+                <div class="OtherLogWaysStyle">
+                    <a href="">
+                        <i class="fa-brands fa-google"></i>
+                        <p> Log in with Google </p>
+                    </a>
+                </div>
+              
+                <div class="TooglePageStyle"> Didn't have Account ? <button id="SignUpPageButton"> Get one </button> </div>
+              
+            </div>
+            
+            <div class="RegistrationSignUpCardStyle">
+
+                <div class="RegistrationTitle"> Hello Friend! </div>
+              
+                <div class="lineStyle" id="UseGsuiteForSignUp"></div>
+              
+                <form action="Registration.php" method="post">
+                    <div class="InputsStyle">
+                        <input type="text" placeholder=" Full name " name="Sname">
+                    </div>
+                    <div class="InputsStyle">
+                        <input type="text" placeholder=" Example@g.ens-kouba.dz " name="SGsuite">
+                    </div>
+                    <div class="InputsStyle">
+                        <input type="Password" placeholder=" Password " name="Spassword">
+                    </div>
+                    <div class="ChekBoxStyle">
+                        <input type="Checkbox">
+                        <p> Show Password </p>
+                    </div>
+                    <div class="SendButton">
+                        <input type="submit" value="Sign Up" name="SButton" >
+                    </div>
+                </form>
+              
+                <div class="lineStyle"></div>
+              
+                <div class="OtherLogWaysStyle">
+                    <a href="">
+                        <i class="fa-brands fa-google"></i>
+                        <p> Sign Up with Google </p>
+                    </a>
+                </div>
+              
+                <div class="TooglePageStyle"> Already have Account ? <button id="LogInPageButton"> LogIn </button></div>
+              
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- PopUp Message! -->
+    <div class="PopUpDivStyle"> 
+        <p class="AdminMessegeStyle">Higher School Administration Say :</p> 
+        <p class="NotificationContentStyle"> Loren Ipsum dolor emit ipsum </p> 
+        <button class="CloseButtonStyle"> Close </button> 
+    </div>
+
+    <script>
+        // Chex Box js code!
+        document.addEventListener("DOMContentLoaded", function() {
+            const Checkboxes = document.querySelectorAll(".ChekBoxStyle input[type='checkbox']");
+            const PasswordFields = document.querySelectorAll(".InputsStyle input[type='password']");
+            
+            Checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    PasswordFields.forEach(function(passwordField) {
+                        if (checkbox.checked) {
+                            passwordField.type = 'text';
+                        } else {
+                            passwordField.type = 'password';
+                        }
+                    });
+                });
+            });
+        });
+        // Flip RegitrationCard!
+        document.addEventListener("DOMContentLoaded", function(){
+            const SignUpButton = document.getElementById("SignUpPageButton");
+            const LogInButton = document.getElementById("LogInPageButton");
+            const RegistrationCard = document.querySelector(".RegitrationCard");
+            
+            function flipCard() {
+                    RegistrationCard.style.transform = 'rotateY(180deg)';
+            }
+            function ReturnCard() {
+                    RegistrationCard.style.transform = 'rotateY(0deg)';
+            }
+            
+            SignUpButton.addEventListener('click', flipCard);
+            LogInButton.addEventListener('click', ReturnCard);
+        });
+        // PopUp Message!
+        document.addEventListener('DOMContentLoaded', function() {
+
+            showPopUp()
+            function showPopUp (){
+                const URLparamater = new URLSearchParams(window.location.search);
+                const message = URLparamater.get("message");
+                
+                if(!message) return;
+                
+                const PopUpDiv = document.querySelector('.PopUpDivStyle'); 
+                const CloseButton = document.querySelector('.CloseButtonStyle'); 
+                const Notificationmesssage = document.querySelector('.NotificationContentStyle'); 
+
+                Notificationmesssage.innerHTML = message ; 
+                PopUpDiv.style.top= '0rem'; 
+                PopUpDiv.style.transitin= '.5s all' 
+                
+                CloseButton.addEventListener('click', function() {
+                    PopUpDiv.style.top = '-15rem'; 
+                });
+                
+            }
+        });
+    </script>
+</body>
+</html>

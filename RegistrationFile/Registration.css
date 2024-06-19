@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*
+{
+    font-family: "poppins" , sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;   
+}
+
+body
+{
+    background: linear-gradient( #4D80E4 , #FFFFFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.RegistrationSection
+{
+    width: 40rem;
+    height: 40rem;
+    margin: 5rem;
+    background: #FFFFFF;
+    border-radius: 6px;
+    padding: 2rem 5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    perspective: 500px;
+}
+
+/*.RegistrationSection:hover > .RegitrationCard
+{
+    transform: rotateY(180deg);
+}*/
+
+
+.RegitrationCard
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 1s;
+    transform-style: preserve-3d;
+}
+
+.RegistrationLogInCardStyle
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.RegistrationSignUpCardStyle
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.RegistrationTitle
+{
+    font-size: 23px;
+    font-weight: 600;
+    color: #5B5B5B;
+    text-align: center;
+    margin: 1rem 0rem;
+}
+
+.InputsStyle
+{
+    height: 3rem;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.InputsStyle input
+{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #F0F1F8;
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+}
+
+.ChekBoxStyle
+{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ChekBoxStyle p, 
+.ChekBoxStyle input
+{
+    color: #5B5B5B;
+    font-size: 14px;
+    outline: none;
+}
+
+
+.lineStyle
+{
+    width: 100%;
+    height: 1px;
+    background-color: #5B5B5B;
+    margin: 2rem 0rem;
+    position: relative;
+}
+
+.lineStyle::after
+{
+    content: "or";
+    position: absolute;
+    top: -13px;
+    left: 225px;
+    background-color: #FFFFFF;
+    color: #5B5B5B;
+    padding: 0rem .5rem;
+}
+
+#UseGsuiteForLogIn::after
+{
+    content: "Log In Using G-suite";
+    left:150px;
+}
+#UseGsuiteForSignUp::after
+{
+    content: "Sign Up Using G-suite";
+    left: 150px;   
+}
+
+.OtherLogWaysStyle a
+{
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background: #F0F1F8;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#5B5B5B;
+    text-decoration: none;
+    
+}
+
+.SendButton
+{
+    margin: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SendButton input[type="submit"]
+{
+    color: #FFFFFF;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #4D80E4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.SendButton input[type="submit"]:hover
+{
+    background: #4D80E4;
+    opacity: 0.9;
+}
+
+
+.TooglePageStyle
+{
+    color: #5B5B5B;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0rem;
+}
+
+.TooglePageStyle button
+{
+    border: none;
+    background: #FFFFFF;
+    color: #4D80E4;
+    padding: 0rem .5rem;
+    font-size: 16px;
+    transition: all .01s;
+}
+
+.TooglePageStyle button:active
+{
+    opacity: 0.8;  
+}
+
+.PopUpDivStyle
+{
+    color: #FFFFFF;
+    width: 25rem;
+    height: 10rem;
+    background-color: #4D80E4;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid #5B5B5B;
+    position: fixed;
+    top: -15rem;
+    transition: all .5s;
+    z-index: 10;
+}
+
+.AdminMessegeStyle
+{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.NotificationContentStyle
+{
+    position: absolute;
+    top: 40%;
+}
+
+.CloseButtonStyle
+{
+    outline: none;
+    padding: .4rem .8rem;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #5B5B5B;
+    text-align: center;
+    color: #5B5B5B;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.CloseButtonStyle:active
+{
+    opacity: 0.8;
+}
